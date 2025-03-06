@@ -63,7 +63,18 @@ int main() {
 
     Node *temp = head;
     while (temp != NULL) {
-        printf("%c:%d", temp->data, temp->count);
+        if (temp->data == ' ') {
+            printf("' ': %d", temp->count);
+        } else if (temp->data == '\n') {
+            printf("'\\n': %d", temp->count);
+        } else if (temp->data == '\t') {
+            printf("'\\t': %d", temp->count);
+        } else if (temp->data == '\r') {
+            printf("'\\r': %d", temp->count);
+        } else {
+            printf("%c:%d", temp->data, temp->count);
+        }
+        
         if (temp->next != NULL) {
             printf(" -> ");
         }
